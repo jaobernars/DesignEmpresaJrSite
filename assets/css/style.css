@@ -1,0 +1,906 @@
+/* Reset básico de margens e configuração de fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff; /* Fundo principal da página */
+    color: #1a1a1a;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+
+
+/* --- Navegação --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+}
+
+.logo-icon {
+    color: #00a046; /* Verde principal */
+    margin-right: 8px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00a046;
+}
+
+/* --- Botões --- */
+.btn {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    color: #ffffff;
+    /* 1. O degradê: começa no seu azul original e termina num azul um pouco mais escuro */
+    background-image: linear-gradient(to bottom, #00a2ff, #007bc2);
+    
+    /* 2. Borda levemente mais escura para dar acabamento */
+    border: 1px solid #006ca8; 
+    
+    /* 3. O SEGREDO: Sombra interna embaixo (inset) + Sombra leve fora do botão */
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+    /* Degradê no hover: começa num azul um pouco mais claro e vai para o seu azul original */
+    background-image: linear-gradient(to bottom, #00a2ff, #007bc2);
+    border-color: #006ca8;
+    
+    /* Efeito de "apertar": diminuímos a sombra interna e movemos o botão para baixo */
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.05);
+    transform: translateY(2px);
+}
+
+.btn-secondary {
+    color: #1a1a1a;
+    /* 1. Degradê suave: começa branco no topo e vai para o seu cinza claro na base */
+    background-image: linear-gradient(to bottom, #ffffff, #f4f4f5);
+    
+    /* 2. Borda bem fina e discreta para dar acabamento */
+    border: 1px solid #e4e4e7;
+    
+    /* 3. Sombra interna bem fraquinha embaixo (apenas 5% de opacidade) */
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.btn-secondary:hover {
+    /* Degradê no hover: desce um tom de cinza, mantendo o padrão */
+    background-image: linear-gradient(to bottom, #fafafa, #e4e4e7);
+    border-color: #d1d5db;
+    
+    /* Efeito de "apertar" acompanhando o botão primário */
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+    transform: translateY(2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Seção Principal (Hero) --- */
+.hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* --- GRID DE BOLINHAS APENAS NO HEADER --- */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o fundo na tela */
+    width: 100vw; /* Força o fundo a ocupar toda a largura da tela, ignorando o max-width de 900px */
+    height: 100%; /* Ocupa toda a altura do header */
+    z-index: -1; /* Joga as bolinhas para trás do texto e dos botões */
+    
+    /* Desenha as bolinhas */
+    background-image: radial-gradient(#d1d5db 1.3px, transparent 1px);
+    background-size: 24px 24px;
+    
+    /* Fade no topo e na base do header */
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+
+
+
+.trust-badge {
+    color: #00a2ff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.trust-badge strong {
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+    
+    /* --- Efeito de Degradê no Texto --- */
+    background-image: linear-gradient(to right, #111111, #00a2ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Esconde a cor sólida para mostrar o degradê do fundo */
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* --- Espaço do Dashboard/Imagem --- */
+.dashboard-preview {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.mockup-placeholder {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border: 1px solid #eaeaea;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-weight: 500;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Se você usar a imagem real, aplique esta classe: */
+.mockup-img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Bloco Único (Fundo Cinza Claro) --- */
+.info-block {
+    background-color: #f9f9f9; /* O cinza clarinho da referência */
+    padding: 60px 0 80px; /* Espaçamento no topo e na base */
+    width: 100%;
+}
+
+/* --- 1. Container de Parceiros --- */
+.partners-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto 60px; /* Margem inferior para afastar das métricas */
+    padding: 0 20px;
+}
+
+.partner-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #999;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    cursor: default;
+}
+
+.partner-logo:hover {
+    color: #333;
+}
+
+/* --- 2. Container de Métricas --- */
+.metrics-container {
+    max-width: 1280px;
+    margin: 0 auto 60px; /* Margem inferior para afastar do banner escuro */
+    padding: 0 20px;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.metric-card {
+    background-color: #ffffff; /* Fundo branco para destacar no cinza */
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 24px 24px 50px 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* --- Atualização do CSS --- */
+.metric-icon {
+    display: inline-flex; /* Use inline-flex para centralizar o SVG */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-bottom: 16px;
+    /* Removemos o font-size e color antigos, pois o SVG já tem seu preenchimento definido */
+}
+
+.metric-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.metric-card p {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.metrics-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 50px 32px;
+}
+
+.cta-text h4 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.cta-text p {
+    font-size: 0.9rem;
+    color: #666;
+    max-width: 600px;
+}
+
+.btn-sm {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* --- 3. Container do Banner Escuro --- */
+.process-container {
+    max-width: 1280px; /* Pouco mais largo para alinhar visualmente com as bordas dos cards */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.process-banner {
+    background-image: linear-gradient(to right, #012241, #2767AF);
+    border-radius: 20px;
+    padding: 60px;
+    color: #fff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.process-content {
+    max-width: 500px;
+    margin-bottom: 60px;
+}
+
+.process-content h2 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.process-content p {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.link-green {
+    color: #E19016;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.3s;
+}
+
+.link-green:hover {
+    opacity: 0.8;
+}
+
+/* Linha do Tempo (Timeline) */
+.process-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.timeline-step {
+    text-align: center;
+    width: 120px;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(219, 219, 219, 0.274);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 1.2rem;
+}
+
+.timeline-step p {
+    font-size: 0.8rem;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.timeline-line {
+    flex-grow: 1;
+    height: 1px;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+    margin: 0 15px;
+    margin-top: -30px;
+    position: relative;
+}
+
+.timeline-img-container {
+    width: 100%;
+    height: auto;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    margin-top: -30px;
+}
+
+.timeline-img {
+    width: 100%;
+    max-width: 130px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.4);
+}
+
+.center-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: none;
+}
+
+.center-line::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+    top: 50%;
+    z-index: 1;
+}
+
+.flight-text {
+    font-size: 0.75rem;
+    color: #a0b6a5;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.flight-icon {
+    font-size: 1.5rem;
+    z-index: 2;
+    background-color: transparent;
+    padding: 0 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 1. Estilos da Imagem com Degradê --- */
+.image-preview-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #ffffff; /* Fundo branco */
+    padding-top: 20px;
+}
+
+.image-fade-wrapper {
+    width: 100%;
+    max-width: 1000px; 
+}
+
+.fade-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px 16px 16px 16px; /* Arredonda só as pontas de cima */
+    
+    /* A mágica do degradê acontece aqui: */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 85%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Seção Centro de Comando --- */
+.command-center-section {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.command-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.command-header p {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.command-media {
+    margin-bottom: 80px;
+}
+
+.command-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* --- Timeline Vertical --- */
+.timeline-container {
+    position: relative;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Move um pouco pra direita para centralizar visualmente */
+    transform: translateX(10%); 
+}
+
+.timeline-line-vertical {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 19px; /* Centraliza a linha atrás dos ícones */
+    width: 2px;
+    background-color: #eaeaea;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    z-index: 2;
+    opacity: 0.4; /* Deixa os itens apagados por padrão */
+    transition: all 0.5s ease; /* Animação suave */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Estado Ativo (O verdinho passando) */
+.timeline-item.active {
+    opacity: 1; /* Acende o item */
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    flex-shrink: 0;
+}
+
+/* Muda a cor do ícone quando a classe .active entra em ação */
+.timeline-item.active .timeline-icon {
+    background-color: #00a046; /* Verde */
+    border-color: #00a046;
+    color: #fff;
+}
+
+.timeline-content {
+    flex-grow: 1;
+    padding-top: 8px; /* Alinha o texto com o centro do ícone */
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.timeline-time {
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+    padding-top: 8px;
+    white-space: nowrap;
+    margin-left: 20px;
+}/* --- Seção Centro de Comando --- */
+.command-center-section {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.command-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.command-header p {
+    font-size: 1.05rem;
+    color: #666;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.command-media {
+    margin-bottom: 80px;
+}
+
+.command-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* --- Timeline Vertical --- */
+.timeline-container {
+    position: relative;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    /* Move um pouco pra direita para centralizar visualmente */
+    transform: translateX(10%); 
+}
+
+.timeline-line-vertical {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 19px; /* Centraliza a linha atrás dos ícones */
+    width: 2px;
+    background-color: #eaeaea;
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    z-index: 2;
+    opacity: 0.4; /* Deixa os itens apagados por padrão */
+    transition: all 0.5s ease; /* Animação suave */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Estado Ativo (O verdinho passando) */
+.timeline-item.active {
+    opacity: 1; /* Acende o item */
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    flex-shrink: 0;
+}
+
+/* Muda a cor do ícone quando a classe .active entra em ação */
+.timeline-item.active .timeline-icon {
+    background-color: #00a046; /* Verde */
+    border-color: #00a046;
+    color: #fff;
+}
+
+.timeline-content {
+    flex-grow: 1;
+    padding-top: 8px; /* Alinha o texto com o centro do ícone */
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.timeline-time {
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+    padding-top: 8px;
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 2. Estilos das Marcas e Gap --- */
+.brands-section {
+    text-align: center;
+    background-color: #ffffff; /* Fundo branco */
+    
+    /* O primeiro valor é o espaço em cima (0), o último (100px) é o GAP embaixo! */
+    padding: 0px 20px 100px; 
+}
+
+.brands-header {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.brands-subtitle {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.partner-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #111; /* Cor mais forte e sem hover, igual à sua imagem 81.2 */
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+.command-media video {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    display: block; /* Evita uma pequena margem fantasma que os vídeos costumam deixar embaixo */
+    object-fit: cover; /* Garante que o vídeo preencha o espaço sem distorcer */
+}
+
+
+
+
+
+
+
+
+
+
+
