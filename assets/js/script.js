@@ -31,7 +31,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Escuta o scroll da página
     window.addEventListener('scroll', checkTimelineScroll);
-    
+
     // Roda uma vez assim que a página carrega
-    checkTimelineScroll(); 
+    checkTimelineScroll();
+
+    // --- FAQ (página About) ---
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            question.closest('.faq-item').classList.toggle('open');
+        });
+    });
+
+    // --- Abas do widget de custos (página Início) ---
+    document.querySelectorAll('.costflow-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            const card = tab.closest('.costflow-card');
+            const target = tab.dataset.tab;
+
+            card.querySelectorAll('.costflow-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            card.querySelectorAll('.costflow-panel').forEach(panel => {
+                panel.classList.toggle('active', panel.dataset.panel === target);
+            });
+        });
+    });
 });

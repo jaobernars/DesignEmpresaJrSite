@@ -32,9 +32,9 @@ body {
     font-size: 1.3rem;
     color: #1a1a1a;
 }
-
+    
 .logo-icon {
-    color: #00a046; /* Verde principal */
+    color: #006ca8; /* Verde principal */
     margin-right: 8px;
     font-weight: 900;
     letter-spacing: -2px;
@@ -55,7 +55,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #00a046;
+    color: #006ca8;
 }
 
 /* --- Botões --- */
@@ -892,6 +892,870 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     display: block; /* Evita uma pequena margem fantasma que os vídeos costumam deixar embaixo */
     object-fit: cover; /* Garante que o vídeo preencha o espaço sem distorcer */
+}
+
+/* ==========================================================================
+   Página "Sobre" (About)
+   ========================================================================== */
+
+/* --- Nossa História (texto + imagem, em duas colunas) --- */
+.narrative-section {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 60px 5% 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.narrative-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 320px;
+    background-image: radial-gradient(#d1d5db 1.3px, transparent 1px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(circle at top right, black, transparent 70%);
+    mask-image: radial-gradient(circle at top right, black, transparent 70%);
+    pointer-events: none;
+}
+
+.narrative-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #f4f4f5;
+    border: 1px solid #ececec;
+    border-radius: 24px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+}
+
+.narrative-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.narrative-text h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.narrative-text p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.narrative-media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.narrative-media .mockup-placeholder {
+    height: 420px;
+    width: 100%;
+    border-radius: 16px;
+    margin: 0;
+}
+
+.narrative-img {
+    display: block;
+    height: 420px;
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.narrative-carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 999px;
+    padding: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.narrative-carousel-controls button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.narrative-carousel-controls button:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Cabeçalho de seção reutilizável --- */
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* --- Cards de informação (Equipe / Diferenciais / Entregáveis) --- */
+.cards-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.cards-section.alt-bg {
+    background-color: #f9f9f9;
+    max-width: 100%;
+}
+
+.cards-section.alt-bg > * {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.info-card .metric-icon {
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- Por que nos escolher (benefícios) --- */
+.benefits-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+}
+
+.benefit-check {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #e6f7ec;
+    color: #00a046;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.benefit-item p {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* --- FAQ --- */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px 100px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.faq-icon {
+    font-size: 1.3rem;
+    color: #006ca8;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-bottom: 24px;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 300px;
+}
+
+/* --- CTA final (variação do banner escuro sem timeline) --- */
+.process-content.no-timeline {
+    margin-bottom: 0;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #0c1b2a;
+    color: #ccc;
+    padding: 60px 5% 30px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1280px;
+    margin: 0 auto 40px;
+}
+
+.footer-brand .logo-text {
+    color: #fff;
+}
+
+.footer-brand p {
+    color: #99a3ad;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    max-width: 280px;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-col h5 {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: #99a3ad;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b7785;
+}
+
+/* --- Widget de comparação de custos (Início) --- */
+.costflow-widget {
+    max-width: 1280px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.costflow-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+    line-height: 1.25;
+}
+
+.costflow-text p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.costflow-features {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.costflow-feature-icon {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.costflow-feature h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+}
+
+.costflow-feature p {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.costflow-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.costflow-tabs {
+    display: inline-flex;
+    gap: 4px;
+    background-color: #f4f4f5;
+    border-radius: 999px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.costflow-tab {
+    border: none;
+    background: transparent;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.costflow-tab.active {
+    background-color: #111;
+    color: #fff;
+}
+
+.costflow-panel {
+    display: none;
+}
+
+.costflow-panel.active {
+    display: block;
+}
+
+.costflow-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.costflow-table th {
+    text-align: left;
+    font-size: 0.8rem;
+    color: #999;
+    font-weight: 600;
+    padding: 10px 8px;
+    border-bottom: 2px solid #00a046;
+}
+
+.costflow-table td {
+    padding: 12px 8px;
+    font-size: 0.9rem;
+    color: #444;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.costflow-table th:last-child,
+.costflow-table td:last-child {
+    text-align: right;
+}
+
+.costflow-total td {
+    border-bottom: none;
+    padding-top: 16px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #111;
+}
+
+.costflow-total.good td:last-child {
+    color: #00a046;
+}
+
+.costflow-total.bad td:last-child {
+    color: #d33636;
+}
+
+/* --- Como funciona, em 4 passos (Início) --- */
+.steps-section {
+    background-color: #0c1b2a;
+    padding: 80px 5%;
+}
+
+.steps-header h2 {
+    max-width: 1280px;
+    margin: 0 auto 40px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.steps-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.step-card {
+    background-color: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.step-media {
+    height: 220px;
+    background-color: rgba(255,255,255,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    color: rgba(255,255,255,0.35);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.step-content {
+    padding: 24px 28px 28px;
+}
+
+.step-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #00a046;
+    margin-bottom: 8px;
+}
+
+.step-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.step-content p {
+    font-size: 0.9rem;
+    color: #a7b3c0;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.step-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.step-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #d6dde4;
+}
+
+.step-checklist .check-icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgba(0,160,70,0.15);
+    color: #00a046;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.steps-footer {
+    max-width: 1280px;
+    margin: 40px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+    color: #a7b3c0;
+    font-size: 0.95rem;
+}
+
+.steps-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(0,160,70,0.15);
+    color: #00a046;
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* --- CTA final em destaque verde (Início) --- */
+.cta-banner {
+    position: relative;
+    max-width: 1280px;
+    margin: 60px auto 0;
+    padding: 100px 5%;
+    border-radius: 24px;
+    overflow: hidden;
+    text-align: center;
+    background-image: radial-gradient(circle at 60% 35%, #1c6b3a 0%, #0a3d1f 45%, #03130a 100%);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.cta-banner-dots {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 380px;
+    background-image: radial-gradient(rgba(255,255,255,0.18) 1.3px, transparent 1.4px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.cta-banner-dots-left {
+    left: 0;
+    -webkit-mask-image: radial-gradient(circle at left center, black, transparent 70%);
+    mask-image: radial-gradient(circle at left center, black, transparent 70%);
+}
+
+.cta-banner-dots-right {
+    right: 0;
+    -webkit-mask-image: radial-gradient(circle at right center, black, transparent 70%);
+    mask-image: radial-gradient(circle at right center, black, transparent 70%);
+}
+
+.cta-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-banner-content h2 {
+    color: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 32px;
+}
+
+.btn-cta-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-image: linear-gradient(to bottom, #1fb15a, #0d8a3f);
+    color: #ffffff;
+    border: 1px solid #0a7a37;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-cta-banner:hover {
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.2);
+    transform: translateY(2px);
+}
+
+/* ==========================================================================
+   Página "Serviços" (Services)
+   ========================================================================== */
+
+/* --- Comparativo: consultoria tradicional vs Momentum Jr. --- */
+.comparison-section {
+    background-color: #ffffff;
+    padding: 20px 5% 100px;
+}
+
+.comparison-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.comparison-card {
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.comparison-card.old {
+    background-color: #fdf3f3;
+    border: 1px solid #f6dede;
+}
+
+.comparison-card.new {
+    background-color: #eef9f1;
+    border: 1px solid #cdeedc;
+}
+
+.comparison-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.comparison-card .comparison-stat {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 20px 0 28px;
+}
+
+.comparison-card.old .comparison-stat {
+    color: #d33636;
+}
+
+.comparison-card.new .comparison-stat {
+    color: #00a046;
+}
+
+.comparison-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.comparison-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.comparison-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.comparison-icon.bad {
+    background-color: #fbe2e2;
+    color: #d33636;
+}
+
+.comparison-icon.good {
+    background-color: #e6f7ec;
+    color: #00a046;
+}
+
+/* --- Checklist usada dentro das seções de serviço (narrative-section) --- */
+.narrative-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.narrative-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.narrative-list .list-check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #e6f7ec;
+    color: #00a046;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+/* --- Responsividade dos novos blocos da página About --- */
+@media (max-width: 768px) {
+    .narrative-grid {
+        grid-template-columns: 1fr;
+        padding: 28px;
+    }
+
+    .cards-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .costflow-widget {
+        grid-template-columns: 1fr;
+    }
+
+    .costflow-features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-banner {
+        padding: 60px 5%;
+    }
+
+    .cta-banner-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-banner-dots {
+        width: 160px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
 }
 
 
