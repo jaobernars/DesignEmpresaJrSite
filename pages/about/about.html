@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quem Somos | Momentum Jr.</title>
+    <title data-i18n="about.pageTitle">Quem Somos | Momentum Jr.</title>
+    <script>
+        (function () {
+            if (localStorage.getItem("siteTheme") === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -11,34 +18,50 @@
 
     <nav class="navbar">
         <div class="logo">
-            <span class="logo-icon">///</span>
-            <span class="logo-text">Momentum Jr.</span>
+            <img src="../../assets/images/Logos/Logo.jpeg" alt="Momentum Jr. Logo" class="logo-icon">
+
+            <span class="logo-text">Many Fields</span>
         </div>
         <ul class="nav-links">
-            <li><a href="../../index.html">Início</a></li>
-            <li><a href="about.html">Sobre</a></li>
-            <li><a href="../service/service.html">Serviços</a></li>
-            <li><a href="#">Portfólio</a></li>
-            <li><a href="#">Contatos</a></li>
+            <li><a href="../../index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="about.html" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="../service/service.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="#" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="#" data-i18n="nav.contact">Contatos</a></li>
         </ul>
-        <a href="#" class="btn btn-primary nav-btn">Trabalhe Conosco</a>
+        <div class="navbar-actions">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" data-i18n-aria-label="a11y.themeToggle">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66M6.34 6.34L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="lang-switch" role="group" aria-label="Selecionar idioma" data-i18n-aria-label="a11y.selectLanguage">
+                <button type="button" class="lang-option active" data-lang="pt">PT</button>
+                <button type="button" class="lang-option" data-lang="en">EN</button>
+            </div>
+            <a href="#" class="btn btn-primary nav-btn" data-i18n="nav.cta">Trabalhe Conosco</a>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="trust-badge">
+        <div class="trust-badge" data-i18n="about.hero.badge">
             Conheça a Momentum Jr.
         </div>
 
-        <h1>Ciência e tecnologia a serviço do seu negócio.</h1>
+        <h1 data-i18n="about.hero.title">Ciência e tecnologia a serviço do seu negócio.</h1>
 
-        <p class="subtitle">
+        <p class="subtitle" data-i18n="about.hero.subtitle">
             Somos uma Empresa Júnior de Ciência & Tecnologia formada por estudantes <br>
             que aplicam rigor científico para resolver problemas reais de empresas parceiras.
         </p>
 
         <div class="hero-buttons">
-            <a href="#equipe" class="btn btn-primary hero-btn">Conheça a equipe</a>
-            <a href="#faq" class="btn btn-secondary hero-btn">Tire suas dúvidas</a>
+            <a href="#equipe" class="btn btn-primary hero-btn" data-i18n="about.hero.btn1">Conheça a equipe</a>
+            <a href="#faq" class="btn btn-secondary hero-btn" data-i18n="about.hero.btn2">Tire suas dúvidas</a>
         </div>
     </header>
 
@@ -49,22 +72,22 @@
     <section class="narrative-section">
         <div class="narrative-grid">
             <div class="narrative-text">
-                <span class="narrative-badge">📍 [Selo ou frase de destaque]</span>
-                <h2>Nossas Origens</h2>
-                <p>
+                <span class="narrative-badge" data-i18n="about.narrative.badge">📍 [Selo ou frase de destaque]</span>
+                <h2 data-i18n="about.narrative.title">Nossas Origens</h2>
+                <p data-i18n="about.narrative.p1">
                     [Escreva aqui o primeiro parágrafo: quando e por quem a empresa foi fundada, e qual problema ou
                     lacuna do mercado vocês identificaram.]
                 </p>
-                <p>
+                <p data-i18n="about.narrative.p2">
                     [Escreva aqui o segundo parágrafo: como essa percepção evoluiu até a criação da empresa júnior e
                     o que vocês decidiram construir a partir disso.]
                 </p>
             </div>
             <div class="narrative-media">
-                <div class="mockup-placeholder">Espaço para foto ou vídeo da equipe/escritório</div>
+                <div class="mockup-placeholder" data-i18n="about.narrative.mediaPlaceholder">Espaço para foto ou vídeo da equipe/escritório</div>
                 <div class="narrative-carousel-controls">
-                    <button aria-label="Imagem anterior">&lsaquo;</button>
-                    <button aria-label="Próxima imagem">&rsaquo;</button>
+                    <button aria-label="Imagem anterior" data-i18n-aria-label="about.prevImage">&lsaquo;</button>
+                    <button aria-label="Próxima imagem" data-i18n-aria-label="about.nextImage">&rsaquo;</button>
                 </div>
             </div>
         </div>
@@ -73,8 +96,8 @@
     <!-- Diferenciais -->
     <section class="cards-section alt-bg">
         <div class="section-header">
-            <h2>Mais que uma Empresa Júnior</h2>
-            <p>Unimos três pilares que poucas consultorias conseguem equilibrar ao mesmo tempo.</p>
+            <h2 data-i18n="about.diff.title">Mais que uma Empresa Júnior</h2>
+            <p data-i18n="about.diff.text">Unimos três pilares que poucas consultorias conseguem equilibrar ao mesmo tempo.</p>
         </div>
 
         <div class="cards-grid-3">
@@ -87,8 +110,8 @@
                         <ellipse cx="12" cy="12" rx="9" ry="4" stroke="#006ca8" stroke-width="2" transform="rotate(120 12 12)"/>
                     </svg>
                 </span>
-                <h3>Cientistas na prática</h3>
-                <p>Aplicamos métodos de física e ciência de dados para diagnosticar e resolver problemas reais de negócio.</p>
+                <h3 data-i18n="about.diff.c1h">Cientistas na prática</h3>
+                <p data-i18n="about.diff.c1p">Aplicamos métodos de física e ciência de dados para diagnosticar e resolver problemas reais de negócio.</p>
             </div>
 
             <div class="info-card">
@@ -98,8 +121,8 @@
                         <path d="M12 2V7M12 17V22M2 12H7M17 12H22" stroke="#006ca8" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </span>
-                <h3>Visão de tecnologia</h3>
-                <p>Usamos ferramentas modernas de automação e análise de dados para acelerar a entrega de valor.</p>
+                <h3 data-i18n="about.diff.c2h">Visão de tecnologia</h3>
+                <p data-i18n="about.diff.c2p">Usamos ferramentas modernas de automação e análise de dados para acelerar a entrega de valor.</p>
             </div>
 
             <div class="info-card">
@@ -109,22 +132,22 @@
                         <path d="M6 11V17C6 17 8.5 19 12 19C15.5 19 18 17 18 17V11" stroke="#006ca8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </span>
-                <h3>Mentoria acadêmica</h3>
-                <p>Cada projeto é supervisionado por professores e profissionais experientes da área.</p>
+                <h3 data-i18n="about.diff.c3h">Mentoria acadêmica</h3>
+                <p data-i18n="about.diff.c3p">Cada projeto é supervisionado por professores e profissionais experientes da área.</p>
             </div>
         </div>
     </section>
 
     <!-- Espaço para imagem/vídeo da equipe -->
     <section class="dashboard-preview">
-        <div class="mockup-placeholder">Espaço reservado para foto ou vídeo da equipe Momentum Jr.</div>
+        <div class="mockup-placeholder" data-i18n="about.teamMediaPlaceholder">Espaço reservado para foto ou vídeo da equipe Momentum Jr.</div>
     </section>
 
     <!-- Equipe -->
     <section class="cards-section" id="equipe">
         <div class="section-header">
-            <h2>Quem faz a Momentum Jr. acontecer</h2>
-            <p>Um time multidisciplinar com um objetivo em comum: transformar conhecimento em resultado.</p>
+            <h2 data-i18n="about.team.title">Quem faz a Momentum Jr. acontecer</h2>
+            <p data-i18n="about.team.text">Um time multidisciplinar com um objetivo em comum: transformar conhecimento em resultado.</p>
         </div>
 
         <div class="cards-grid-3">
@@ -135,8 +158,8 @@
                         <path d="M6 11V17C6 17 8.5 19 12 19C15.5 19 18 17 18 17V11" stroke="#006ca8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </span>
-                <h3>Estudantes de Exatas</h3>
-                <p>Base sólida em física, matemática e ciência de dados aplicada a problemas reais.</p>
+                <h3 data-i18n="about.team.c1h">Estudantes de Exatas</h3>
+                <p data-i18n="about.team.c1p">Base sólida em física, matemática e ciência de dados aplicada a problemas reais.</p>
             </div>
 
             <div class="info-card">
@@ -146,8 +169,8 @@
                         <path d="M12 2V7M12 17V22M2 12H7M17 12H22" stroke="#006ca8" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </span>
-                <h3>Especialistas em tecnologia</h3>
-                <p>Desenvolvimento, automação e análise de dados para sustentar cada solução entregue.</p>
+                <h3 data-i18n="about.team.c2h">Especialistas em tecnologia</h3>
+                <p data-i18n="about.team.c2p">Desenvolvimento, automação e análise de dados para sustentar cada solução entregue.</p>
             </div>
 
             <div class="info-card">
@@ -157,8 +180,8 @@
                         <path d="M12 5.5V19.5" stroke="#006ca8" stroke-width="2"/>
                     </svg>
                 </span>
-                <h3>Mentores e professores</h3>
-                <p>Orientação acadêmica que garante rigor metodológico em todas as etapas do projeto.</p>
+                <h3 data-i18n="about.team.c3h">Mentores e professores</h3>
+                <p data-i18n="about.team.c3p">Orientação acadêmica que garante rigor metodológico em todas as etapas do projeto.</p>
             </div>
         </div>
     </section>
@@ -166,8 +189,8 @@
     <!-- O que entregamos -->
     <section class="cards-section alt-bg">
         <div class="section-header">
-            <h2>O que entregamos</h2>
-            <p>Soluções pensadas para gerar impacto real e mensurável no seu negócio.</p>
+            <h2 data-i18n="about.deliver.title">O que entregamos</h2>
+            <p data-i18n="about.deliver.text">Soluções pensadas para gerar impacto real e mensurável no seu negócio.</p>
         </div>
 
         <div class="cards-grid-3">
@@ -179,8 +202,8 @@
                         <circle cx="12" cy="12" r="1" fill="#006ca8"/>
                     </svg>
                 </span>
-                <h3>Consultoria estratégica</h3>
-                <p>Diagnóstico aprofundado e plano de ação claro para os desafios da sua empresa.</p>
+                <h3 data-i18n="about.deliver.c1h">Consultoria estratégica</h3>
+                <p data-i18n="about.deliver.c1p">Diagnóstico aprofundado e plano de ação claro para os desafios da sua empresa.</p>
             </div>
 
             <div class="info-card">
@@ -192,8 +215,8 @@
                         <rect x="19" y="4" width="3" height="18" rx="1.5" fill="#006ca8"/>
                     </svg>
                 </span>
-                <h3>Dados & automação</h3>
-                <p>Soluções que economizam tempo e revelam oportunidades escondidas nos seus números.</p>
+                <h3 data-i18n="about.deliver.c2h">Dados & automação</h3>
+                <p data-i18n="about.deliver.c2p">Soluções que economizam tempo e revelam oportunidades escondidas nos seus números.</p>
             </div>
 
             <div class="info-card">
@@ -202,8 +225,8 @@
                         <path d="M9 18H15M10 21H14M12 3C8.5 3 6.5 5.5 6.5 8.5C6.5 10.8 7.8 12.2 9 13.5C9.6 14.1 10 15 10 16H14C14 15 14.4 14.1 15 13.5C16.2 12.2 17.5 10.8 17.5 8.5C17.5 5.5 15.5 3 12 3Z" stroke="#006ca8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </span>
-                <h3>Capacitação e conhecimento</h3>
-                <p>Transferimos o que aprendemos para que sua equipe continue evoluindo depois do projeto.</p>
+                <h3 data-i18n="about.deliver.c3h">Capacitação e conhecimento</h3>
+                <p data-i18n="about.deliver.c3p">Transferimos o que aprendemos para que sua equipe continue evoluindo depois do projeto.</p>
             </div>
         </div>
     </section>
@@ -212,7 +235,7 @@
     <section class="info-block">
         <div class="metrics-container">
             <div class="section-header">
-                <h2>A Momentum Jr. em números</h2>
+                <h2 data-i18n="about.numbers.title">A Momentum Jr. em números</h2>
             </div>
 
             <div class="metrics-grid">
@@ -225,7 +248,7 @@
                         </svg>
                     </span>
                     <h3>+15</h3>
-                    <p>Projetos entregues</p>
+                    <p data-i18n="about.numbers.m1">Projetos entregues</p>
                 </div>
 
                 <div class="metric-card">
@@ -238,7 +261,7 @@
                         </svg>
                     </span>
                     <h3>+20</h3>
-                    <p>Membros ativos</p>
+                    <p data-i18n="about.numbers.m2">Membros ativos</p>
                 </div>
 
                 <div class="metric-card">
@@ -249,7 +272,7 @@
                         </svg>
                     </span>
                     <h3>98%</h3>
-                    <p>Satisfação dos clientes</p>
+                    <p data-i18n="about.numbers.m3">Satisfação dos clientes</p>
                 </div>
 
                 <div class="metric-card">
@@ -260,7 +283,7 @@
                         </svg>
                     </span>
                     <h3>+3</h3>
-                    <p>Anos de atuação</p>
+                    <p data-i18n="about.numbers.m4">Anos de atuação</p>
                 </div>
             </div>
         </div>
@@ -269,26 +292,26 @@
     <!-- Por que nos escolher -->
     <section class="benefits-section">
         <div class="section-header">
-            <h2>Por que escolher a Momentum Jr.</h2>
-            <p>Vantagens que fazem a diferença na hora de decidir quem vai cuidar do seu projeto.</p>
+            <h2 data-i18n="about.benefits.title">Por que escolher a Momentum Jr.</h2>
+            <p data-i18n="about.benefits.text">Vantagens que fazem a diferença na hora de decidir quem vai cuidar do seu projeto.</p>
         </div>
 
         <div class="benefits-grid">
             <div class="benefit-item">
                 <span class="benefit-check">&check;</span>
-                <p>Contato direto com a equipe responsável pelo seu projeto</p>
+                <p data-i18n="about.benefits.b1">Contato direto com a equipe responsável pelo seu projeto</p>
             </div>
             <div class="benefit-item">
                 <span class="benefit-check">&check;</span>
-                <p>Metodologia científica aplicada à realidade do seu negócio</p>
+                <p data-i18n="about.benefits.b2">Metodologia científica aplicada à realidade do seu negócio</p>
             </div>
             <div class="benefit-item">
                 <span class="benefit-check">&check;</span>
-                <p>Custo acessível para empresas, startups e pequenos negócios</p>
+                <p data-i18n="about.benefits.b3">Custo acessível para empresas, startups e pequenos negócios</p>
             </div>
             <div class="benefit-item">
                 <span class="benefit-check">&check;</span>
-                <p>Acompanhamento próximo, com relatórios de progresso</p>
+                <p data-i18n="about.benefits.b4">Acompanhamento próximo, com relatórios de progresso</p>
             </div>
         </div>
     </section>
@@ -296,41 +319,41 @@
     <!-- FAQ -->
     <section class="faq-section" id="faq">
         <div class="section-header">
-            <h2>Perguntas frequentes</h2>
+            <h2 data-i18n="faq.title">Perguntas frequentes</h2>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">O que é uma Empresa Júnior?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="about.faq.q1">O que é uma Empresa Júnior?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>É uma organização formada e gerida por estudantes que prestam serviços reais para empresas, aplicando na prática o que aprendem na universidade, sob orientação acadêmica.</p>
+                <p data-i18n="about.faq.a1">É uma organização formada e gerida por estudantes que prestam serviços reais para empresas, aplicando na prática o que aprendem na universidade, sob orientação acadêmica.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Quanto custa contratar a Momentum Jr.?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="about.faq.q2">Quanto custa contratar a Momentum Jr.?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Nossos preços são acessíveis porque somos uma empresa júnior sem fins lucrativos. O valor de cada projeto é definido junto com você, de acordo com o escopo e a complexidade.</p>
+                <p data-i18n="about.faq.a2">Nossos preços são acessíveis porque somos uma empresa júnior sem fins lucrativos. O valor de cada projeto é definido junto com você, de acordo com o escopo e a complexidade.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Quanto tempo dura um projeto?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="about.faq.q3">Quanto tempo dura um projeto?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Em geral, nossos projetos duram entre 3 e 10 semanas, dependendo do escopo definido na etapa de diagnóstico inicial.</p>
+                <p data-i18n="about.faq.a3">Em geral, nossos projetos duram entre 3 e 10 semanas, dependendo do escopo definido na etapa de diagnóstico inicial.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Que tipo de empresa pode contratar a Momentum Jr.?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="about.faq.q4">Que tipo de empresa pode contratar a Momentum Jr.?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Empresas de qualquer porte e segmento que busquem soluções baseadas em ciência, dados e tecnologia para resolver desafios reais do negócio.</p>
+                <p data-i18n="about.faq.a4">Empresas de qualquer porte e segmento que busquem soluções baseadas em ciência, dados e tecnologia para resolver desafios reais do negócio.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Como funciona a metodologia de trabalho?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="about.faq.q5">Como funciona a metodologia de trabalho?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Seguimos quatro etapas: diagnóstico inicial, planejamento estratégico, execução com reportes periódicos e entrega final com transferência de conhecimento.</p>
+                <p data-i18n="about.faq.a5">Seguimos quatro etapas: diagnóstico inicial, planejamento estratégico, execução com reportes periódicos e entrega final com transferência de conhecimento.</p>
             </div>
         </div>
     </section>
@@ -339,9 +362,9 @@
     <section class="process-container">
         <div class="process-banner">
             <div class="process-content no-timeline">
-                <h2>Pronto para transformar ciência em resultado?</h2>
-                <p>Fale com a nossa equipe e descubra como a Momentum Jr. pode acelerar o próximo passo do seu negócio.</p>
-                <a href="#" class="btn btn-primary">Fale com a gente</a>
+                <h2 data-i18n="about.cta.title">Pronto para transformar ciência em resultado?</h2>
+                <p data-i18n="about.cta.text">Fale com a nossa equipe e descubra como a Momentum Jr. pode acelerar o próximo passo do seu negócio.</p>
+                <a href="#" class="btn btn-primary" data-i18n="cta.talkToUs">Fale com a gente</a>
             </div>
         </div>
     </section>
@@ -351,23 +374,23 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="logo">
-                    <span class="logo-icon">///</span>
+                    <img src="../../assets/images/logo.png" alt="Momentum Jr. Logo" class="logo-icon">
                     <span class="logo-text">Momentum Jr.</span>
                 </div>
-                <p>Empresa Júnior de Ciência & Tecnologia que transforma conhecimento acadêmico em soluções reais para o mercado.</p>
+                <p data-i18n="footer.tagline">Empresa Júnior de Ciência & Tecnologia que transforma conhecimento acadêmico em soluções reais para o mercado.</p>
             </div>
 
             <div class="footer-links">
                 <div class="footer-col">
-                    <h5>Navegação</h5>
+                    <h5 data-i18n="footer.navHeader">Navegação</h5>
                     <ul>
-                        <li><a href="../../index.html">Início</a></li>
-                        <li><a href="about.html">Quem Somos</a></li>
-                        <li><a href="../service/service.html">Serviços</a></li>
+                        <li><a href="../../index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="about.html" data-i18n="footer.navAbout">Quem Somos</a></li>
+                        <li><a href="../service/service.html" data-i18n="nav.services">Serviços</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Contato</h5>
+                    <h5 data-i18n="footer.contactHeader">Contato</h5>
                     <ul>
                         <li><a href="mailto:contato@momentumjr.com">contato@momentumjr.com</a></li>
                         <li><a href="#">Instagram</a></li>
@@ -377,11 +400,12 @@
             </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-bottom" data-i18n="footer.copyright">
             &copy; 2026 Momentum Jr. Todos os direitos reservados.
         </div>
     </footer>
 
+    <script src="../../assets/js/i18n.js"></script>
     <script src="../../assets/js/script.js"></script>
 
 </body>

@@ -56,4 +56,57 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    /* ================================================
+       TEAM CAROUSEL
+       ================================================ */
+    (function () {
+        const carousel = document.getElementById('teamCarousel');
+        const dotsContainer = document.getElementById('teamDots');
+        if (!carousel) return;
+
+        const cards = Array.from(carousel.querySelectorAll('.team-card'));
+        const total = cards.length;
+        let current = 0;
+
+        const visibleCount = () => {
+            if (window.innerWidth < 600) return 1;
+            if (window.innerWidth < 900) return 2;
+            if (window.innerWidth < 1200) return 3;
+            return 5;
+        };
+
+        // Max index so the last card never goes past the right edge
+        const maxIndex = () => Math.max(0, total - visibleCount());
+
+        function getCardWidth() {
+            if (!cards[0]) return 0;
+            return cards[0].offsetWidth + 20; // 20px = gap
+        }
+
+        function buildDots() {
+            dotsContainer.innerHTML = '';
+            for (let i = 0; i <= maxIndex(); i++) {
+                const btn = document.createElement('button');
+                btn.className = 'team-dot' + (i === current ? ' active' : '');
+                btn.setAttribute('aria-label', `Card ${i + 1}`);
+                btn.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(btn);
+            }
+        }
+
+        function goTo(index) {
+            current = Math.max(0, Math.min(index, maxIndex()));
+            carousel.style.transform = `translateX(-${current * getCardWidth()}px)`;
+            carousel.style.transition = 'transform 0.4s cubic-bezier(.4,0,.2,1)';
+            buildDots();
+        }
+
+        document.querySelector('.team-nav-prev')?.addEventListener('click', () => goTo(current - 1));
+        document.querySelector('.team-nav-next')?.addEventListener('click', () => goTo(current + 1));
+
+        carousel.style.display = 'flex';
+        buildDots();
+        window.addEventListener('resize', () => { current = 0; goTo(0); });
+    })();
 });

@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Empresa Júnior</title>
+    <title>Many Fields</title>
+    <script>
+        (function () {
+            if (localStorage.getItem("siteTheme") === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,47 +19,62 @@
 
     <nav class="navbar">
         <div class="logo">
-            <span class="logo-icon">///</span>
-            <span class="logo-text">Many Fields Jr.</span>
+            <img src="assets/images/Logos/Logo.jpeg" alt="Momentum Jr. Logo" class="logo-icon">
+            <span class="logo-text">Many Fields</span>
         </div>
         <ul class="nav-links">
-            <li><a href="../../index.html">Início</a></li>
-            <li><a href="../../pages/about/about.html">Sobre</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="pages/about/about.html" data-i18n="nav.about">Sobre</a></li>
             <!-- <li><a href="#">Instituição</a></li> -->
-            <li><a href="pages/service/service.html">Serviços</a></li>
-            <li><a href="#">Portfólio</a></li>
+            <li><a href="pages/service/service.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="#" data-i18n="nav.portfolio">Portfólio</a></li>
             <!-- <li><a href="#">Blog</a></li> -->
-            <li><a href="#">Contatos</a></li>
+            <li><a href="#" data-i18n="nav.contact">Contatos</a></li>
         </ul>
-        <a href="#" class="btn btn-primary nav-btn">Trabalhe Conosco</a>
+        <div class="navbar-actions">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" data-i18n-aria-label="a11y.themeToggle">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66M6.34 6.34L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="lang-switch" role="group" aria-label="Selecionar idioma" data-i18n-aria-label="a11y.selectLanguage">
+                <button type="button" class="lang-option active" data-lang="pt">PT</button>
+                <button type="button" class="lang-option" data-lang="en">EN</button>
+            </div>
+            <a href="#" class="btn btn-primary nav-btn" data-i18n="nav.cta">Trabalhe Conosco</a>
+        </div>
     </nav>
 
     
     
     
     <header class="hero">
-        <div class="trust-badge">
+        <div class="trust-badge" data-i18n="home.hero.badge">
             Solução para desenvolvimento e inovação da sua empresa.
         </div>
 
-        <h1>Física Fundamental para Soluções inteligentes.</h1>
-        
+        <h1 data-i18n="home.hero.title">Física Fundamental para Soluções inteligentes.</h1>
+
         <!--<h1>Soluções inteligentes,<br>Crescimento sem limites</h1>-->
-        
-        <p class="subtitle">
+
+        <p class="subtitle" data-i18n="home.hero.subtitle">
             Uma empresa estratégica em Ciência & Tecnologia que transforma <br> projetos em inovações e impulsiona o crescimento de seus negócios.<br>
         </p>
-        
+
         <div class="hero-buttons">
-            <a href="#" class="btn btn-primary hero-btn">Trabalhe Conosco</a>
-            
-            <a href="#" class="btn btn-secondary hero-btn">Saiba Mais</a>
+            <a href="#" class="btn btn-primary hero-btn" data-i18n="nav.cta">Trabalhe Conosco</a>
+
+            <a href="#" class="btn btn-secondary hero-btn" data-i18n="home.hero.learnMore">Saiba Mais</a>
         </div>
     </header>
 
 
     <section class="dashboard-preview">
-        <img src="https://www.quantamagazine.org/wp-content/uploads/2027/04/CNRS-2nd_CPPM_Eye-of-a-Neutrino-Telescope_Hugo-Pardinilla-1-2048x1365.jpg" alt="Preview do nosso serviço" class="mockup-img">
+        <img src="assets/images/Image.png" alt="Preview do nosso serviço" data-i18n-alt="home.dashboardAlt" class="mockup-img">
     </section>
 
 
@@ -139,19 +161,19 @@
 
             <div class="metrics-cta">
                 <div class="cta-text">
-                    <h4>Explore os benefícios de contratar nossa EJ</h4>
-                    <p>Investir em projetos consultivos traz inúmeras vantagens estruturais. Veja como nossa equipe pode transformar a realidade da sua marca.</p>
+                    <h4 data-i18n="home.metricsCta.title">Explore os benefícios de contratar nossa EJ</h4>
+                    <p data-i18n="home.metricsCta.text">Investir em projetos consultivos traz inúmeras vantagens estruturais. Veja como nossa equipe pode transformar a realidade da sua marca.</p>
                 </div>
-                <a href="#" class="btn btn-secondary btn-sm">Preços e benefícios &rarr;</a>
+                <a href="#" class="btn btn-secondary btn-sm" data-i18n="home.metricsCta.link">Preços e benefícios &rarr;</a>
             </div>
         </div>
 
         <div class="process-container">
             <div class="process-banner">
                 <div class="process-content">
-                    <h2>Soluções completas,<br>ágeis e eficientes.</h2>
-                    <p>Trabalhando de forma integrada à sua empresa, conseguimos acelerar processos e simplificar a execução de projetos complexos, entregando valor real.</p>
-                    <a href="#" class="link-green">Saiba mais &rsaquo;</a>
+                    <h2 data-i18n="home.process.title">Soluções completas,<br>ágeis e eficientes.</h2>
+                    <p data-i18n="home.process.text">Trabalhando de forma integrada à sua empresa, conseguimos acelerar processos e simplificar a execução de projetos complexos, entregando valor real.</p>
+                    <a href="#" class="link-green" data-i18n="home.process.link">Saiba mais &rsaquo;</a>
                 </div>
 
                 <div class="process-timeline">
@@ -163,31 +185,31 @@
                                 <path d="M9 16H11V21" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <p>Sua Empresa</p>
+                        <p data-i18n="home.process.step1">Sua Empresa</p>
                     </div>
-                    
+
                     <div class="timeline-line"></div>
-                    
+
                     <div class="timeline-step">
                         <div class="step-icon">🤝</div>
-                        <p>Diagnóstico<br>com a EJ</p>
+                        <p data-i18n="home.process.step2">Diagnóstico<br>com a EJ</p>
                     </div>
-                    
+
                     <div class="timeline-line center-line">
-                        <span class="flight-text">Execução Ágil</span>
+                        <span class="flight-text" data-i18n="home.process.flight">Execução Ágil</span>
                         <span class="flight-icon">🚀</span>
                     </div>
-                    
+
                     <div class="timeline-step">
                         <div class="step-icon">⚙️</div>
-                        <p>Desenvolvimento<br>da Solução</p>
+                        <p data-i18n="home.process.step3">Desenvolvimento<br>da Solução</p>
                     </div>
-                    
+
                     <div class="timeline-line"></div>
-                    
+
                     <div class="timeline-step">
                         <div class="step-icon">✅</div>
-                        <p>Entrega de<br>Resultados</p>
+                        <p data-i18n="home.process.step4">Entrega de<br>Resultados</p>
                     </div>
                 </div>
             </div>
@@ -195,48 +217,48 @@
 
         <div class="costflow-widget">
             <div class="costflow-text">
-                <h2>Adote uma abordagem mais enxuta e transforme tempo em resultado.</h2>
-                <p>
+                <h2 data-i18n="home.costflow.title">Adote uma abordagem mais enxuta e transforme tempo em resultado.</h2>
+                <p data-i18n="home.costflow.text">
                     Chega de diagnósticos genéricos e prazos arrastados; com a Momentum Jr., cada etapa do
                     projeto é objetiva e mensurável, entregando valor real desde as primeiras semanas.
                 </p>
-                <a href="#" class="link-green">Saber mais &rsaquo;</a>
+                <a href="#" class="link-green" data-i18n="home.costflow.link">Saber mais &rsaquo;</a>
 
                 <div class="costflow-features">
                     <div class="costflow-feature">
                         <span class="costflow-feature-icon">💰</span>
-                        <h4>Economize até 50%</h4>
-                        <p>Diagnóstico claro elimina suposições e retrabalho.</p>
+                        <h4 data-i18n="home.costflow.f1Title">Economize até 50%</h4>
+                        <p data-i18n="home.costflow.f1Text">Diagnóstico claro elimina suposições e retrabalho.</p>
                     </div>
                     <div class="costflow-feature">
                         <span class="costflow-feature-icon">🚫</span>
-                        <h4>Sem taxas ocultas</h4>
-                        <p>Valor do projeto é definido com clareza desde o início.</p>
+                        <h4 data-i18n="home.costflow.f2Title">Sem taxas ocultas</h4>
+                        <p data-i18n="home.costflow.f2Text">Valor do projeto é definido com clareza desde o início.</p>
                     </div>
                 </div>
             </div>
 
             <div class="costflow-card">
                 <div class="costflow-tabs">
-                    <button class="costflow-tab active" data-tab="momentum">Momentum Jr.</button>
-                    <button class="costflow-tab" data-tab="tradicional">Consultoria tradicional</button>
+                    <button class="costflow-tab active" data-tab="momentum">Many Fields</button>
+                    <button class="costflow-tab" data-tab="tradicional" data-i18n="home.costflow.tabTraditional">Consultoria tradicional</button>
                 </div>
 
                 <div class="costflow-panel active" data-panel="momentum">
                     <table class="costflow-table">
                         <thead>
-                            <tr><th>Custo</th><th>Momentum Jr.</th></tr>
+                            <tr><th data-i18n="home.costflow.thCost">Custo</th><th>Many Fields</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Diagnóstico inicial</td><td>Incluso</td></tr>
-                            <tr><td>Equipe dedicada</td><td>R$ 2.600</td></tr>
-                            <tr><td>Relatórios e entregáveis</td><td>Incluso</td></tr>
-                            <tr><td>Ferramentas e licenças</td><td>Incluso</td></tr>
-                            <tr><td>Implementação</td><td>R$ 2.100</td></tr>
-                            <tr><td>Suporte pós-projeto</td><td>R$ 500</td></tr>
+                            <tr><td data-i18n="home.costflow.rowDiag">Diagnóstico inicial</td><td data-i18n="home.costflow.included">Incluso</td></tr>
+                            <tr><td data-i18n="home.costflow.rowTeam">Equipe dedicada</td><td>R$ 2.600</td></tr>
+                            <tr><td data-i18n="home.costflow.rowReports">Relatórios e entregáveis</td><td data-i18n="home.costflow.included">Incluso</td></tr>
+                            <tr><td data-i18n="home.costflow.rowTools">Ferramentas e licenças</td><td data-i18n="home.costflow.included">Incluso</td></tr>
+                            <tr><td data-i18n="home.costflow.rowImpl">Implementação</td><td>R$ 2.100</td></tr>
+                            <tr><td data-i18n="home.costflow.rowSupport">Suporte pós-projeto</td><td>R$ 500</td></tr>
                         </tbody>
                         <tfoot>
-                            <tr class="costflow-total good"><td>Custos totais*</td><td>R$ 5.200</td></tr>
+                            <tr class="costflow-total good"><td data-i18n="home.costflow.rowTotal">Custos totais*</td><td>R$ 5.200</td></tr>
                         </tfoot>
                     </table>
                 </div>
@@ -244,18 +266,18 @@
                 <div class="costflow-panel" data-panel="tradicional">
                     <table class="costflow-table">
                         <thead>
-                            <tr><th>Custo</th><th>Consultoria tradicional</th></tr>
+                            <tr><th data-i18n="home.costflow.thCost">Custo</th><th data-i18n="home.costflow.tabTraditional">Consultoria tradicional</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Diagnóstico inicial</td><td>R$ 1.800</td></tr>
-                            <tr><td>Equipe dedicada</td><td>R$ 4.200</td></tr>
-                            <tr><td>Relatórios e entregáveis</td><td>R$ 900</td></tr>
-                            <tr><td>Ferramentas e licenças</td><td>R$ 600</td></tr>
-                            <tr><td>Implementação</td><td>R$ 2.300</td></tr>
-                            <tr><td>Suporte pós-projeto</td><td>R$ 600</td></tr>
+                            <tr><td data-i18n="home.costflow.rowDiag">Diagnóstico inicial</td><td>R$ 1.800</td></tr>
+                            <tr><td data-i18n="home.costflow.rowTeam">Equipe dedicada</td><td>R$ 4.200</td></tr>
+                            <tr><td data-i18n="home.costflow.rowReports">Relatórios e entregáveis</td><td>R$ 900</td></tr>
+                            <tr><td data-i18n="home.costflow.rowTools">Ferramentas e licenças</td><td>R$ 600</td></tr>
+                            <tr><td data-i18n="home.costflow.rowImpl">Implementação</td><td>R$ 2.300</td></tr>
+                            <tr><td data-i18n="home.costflow.rowSupport">Suporte pós-projeto</td><td>R$ 600</td></tr>
                         </tbody>
                         <tfoot>
-                            <tr class="costflow-total bad"><td>Custos totais*</td><td>R$ 10.400</td></tr>
+                            <tr class="costflow-total bad"><td data-i18n="home.costflow.rowTotal">Custos totais*</td><td>R$ 10.400</td></tr>
                         </tfoot>
                     </table>
                 </div>
@@ -267,93 +289,97 @@
     <!-- Como funciona (modelo: substitua os textos entre [colchetes]) -->
     <section class="steps-section">
         <div class="steps-header">
-            <h2>Começar com a Many Fields Jr é simples.</h2>
+            <h2 data-i18n="home.steps.title">Começar com a Many Fields Jr é simples.</h2>
         </div>
 
         <div class="steps-grid">
             <div class="step-card">
-                <div class="step-media">[Espaço para imagem/print do Passo 1]</div>
+                <div class="step-media" data-i18n="home.steps.media1">[Espaço para imagem/print do Passo 1]</div>
                 <div class="step-content">
-                    <span class="step-tag">Passo 1</span>
-                    <h3>Consulta inicial</h3>
-                    <p>Entre em contato conosco para discutirmos suas necessidades e desafios atuais. Ouvimos o contexto da sua empresa, entendemos os desafios e definimos juntos o escopo do trabalho. </p>
+                    <span class="step-tag" data-i18n="home.steps.tag1">Passo 1</span>
+                    <h3 data-i18n="home.steps.h1">Consulta inicial</h3>
+                    <p data-i18n="home.steps.p1">Entre em contato conosco para discutirmos suas necessidades e desafios atuais. Ouvimos o contexto da sua empresa, entendemos os desafios e definimos juntos o escopo do trabalho. </p>
                     <ul class="step-checklist">
-                        <li><span class="check-icon">&check;</span>Conversa inicial para entender seus desafios.</li>
-                        <li><span class="check-icon">&check;</span> Definição do escopo e das variáveis de trabalho.</li>
-                        <li><span class="check-icon">&check;</span>Planejamento de cronograma de ação claro e objetivo.</li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c1a">Conversa inicial para entender seus desafios.</span></li>
+                        <li><span class="check-icon">&check;</span> <span data-i18n="home.steps.c1b">Definição do escopo e das variáveis de trabalho.</span></li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c1c">Planejamento de cronograma de ação claro e objetivo.</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="step-card">
-                <div class="step-media">[Espaço para imagem/print do Passo 2]</div>
+                <div class="step-media" data-i18n="home.steps.media2">[Espaço para imagem/print do Passo 2]</div>
                 <div class="step-content">
-                    <span class="step-tag">Passo 2</span>
-                    <h3>Diagnóstico técnico e Execussão</h3>
-                    <p>Investigamos a fundo o que está por trás do sintoma e traduzimos o desafio num problema bem definido, com variáveis claras. Entender com precisão é o que torna possível resolver com eficiência.</p>
+                    <span class="step-tag" data-i18n="home.steps.tag2">Passo 2</span>
+                    <h3 data-i18n="home.steps.h2">Diagnóstico técnico e Execussão</h3>
+                    <p data-i18n="home.steps.p2">Investigamos a fundo o que está por trás do sintoma e traduzimos o desafio num problema bem definido, com variáveis claras. Entender com precisão é o que torna possível resolver com eficiência.</p>
                     <ul class="step-checklist">
-                        <li><span class="check-icon">&check;</span>Atacamos a raiz do problema.</li>
-                        <li><span class="check-icon">&check;</span>Traduzimos o desafio em variáveis claras e objetivas.</li>
-                        <li><span class="check-icon">&check;</span>Executamos decisões objetivas guiadas por fundamentos e dados.</li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c2a">Atacamos a raiz do problema.</span></li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c2b">Traduzimos o desafio em variáveis claras e objetivas.</span></li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c2c">Executamos decisões objetivas guiadas por fundamentos e dados.</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="step-card">
-                <div class="step-media">[Espaço para imagem/print do Passo 3]</div>
+                <div class="step-media" data-i18n="home.steps.media3">[Espaço para imagem/print do Passo 3]</div>
                 <div class="step-content">
-                    <span class="step-tag">Passo 3</span>
-                    <h3>Solução sob Medida</h3>
-                    <p>Construímos a solução. Modelos computacionais, simulações e análises físicas e estatísticas nos permitem testar cenários, antecipar resultados e desenhar a resposta certa para o seu caso.</p>
+                    <span class="step-tag" data-i18n="home.steps.tag3">Passo 3</span>
+                    <h3 data-i18n="home.steps.h3">Solução sob Medida</h3>
+                    <p data-i18n="home.steps.p3">Construímos a solução. Modelos computacionais, simulações e análises físicas e estatísticas nos permitem testar cenários, antecipar resultados e desenhar a resposta certa para o seu caso.</p>
                     <ul class="step-checklist">
-                        <li><span class="check-icon">&check;</span>Uma solução desenhada só para você.</li>
-                        <li><span class="check-icon">&check;</span>Testamos antes de você arriscar capital.</li>
-                        <li><span class="check-icon">&check;</span>Cada recomendação justificada por dados.</li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c3a">Uma solução desenhada só para você.</span></li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c3b">Testamos antes de você arriscar capital.</span></li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c3c">Cada recomendação justificada por dados.</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="step-card">
-                <div class="step-media">[Espaço para imagem/print do Passo 4]</div>
+                <div class="step-media" data-i18n="home.steps.media4">[Espaço para imagem/print do Passo 4]</div>
                 <div class="step-content">
-                    <span class="step-tag">Passo 4</span>
-                    <h3>Entrega e Acompanhamento</h3>
-                    <p>Entregamos resultados em recomendações claras e acionáveis, e ficamos ao seu lado na hora de colocá-las em prática. O fim do projeto é o começo do seu resultado.</p>
+                    <span class="step-tag" data-i18n="home.steps.tag4">Passo 4</span>
+                    <h3 data-i18n="home.steps.h4">Entrega e Acompanhamento</h3>
+                    <p data-i18n="home.steps.p4">Entregamos resultados em recomendações claras e acionáveis, e ficamos ao seu lado na hora de colocá-las em prática. O fim do projeto é o começo do seu resultado.</p>
                     <ul class="step-checklist">
-                        <li><span class="check-icon">&check;</span>O resultado começa com a entrega.</li>
-                        <li><span class="check-icon">&check;</span>Acompanhamento para resultados reais.</li>
-                        <li><span class="check-icon">&check;</span>Recomendações claras e prontas para aplicar.</li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c4a">O resultado começa com a entrega.</span></li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c4b">Acompanhamento para resultados reais.</span></li>
+                        <li><span class="check-icon">&check;</span><span data-i18n="home.steps.c4c">Recomendações claras e prontas para aplicar.</span></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="steps-footer">
-            <span>[Texto de destaque, ex: O tempo médio de diagnóstico é apenas]</span>
-            <span class="steps-badge">&#8599; [valor]</span>
+            <span data-i18n="home.steps.footerText">[Texto de destaque, ex: O tempo médio de diagnóstico é apenas]</span>
+            <span class="steps-badge" data-i18n="home.steps.footerBadge">&#8599; [valor]</span>
         </div>
     </section>
 
 
-    <section class="command-center-section">
+
+
+
+
+    <!-- <section class="command-center-section">
         <div class="command-header">
-            <h2>Seu centro de comando para projetos ágeis</h2>
-            <p>Diferente de consultorias tradicionais que te deixam no escuro, nosso método oferece visibilidade completa e controle sobre cada etapa do seu projeto.</p>
+            <h2 data-i18n="home.command.title">Seu centro de comando para projetos ágeis</h2>
+            <p data-i18n="home.command.text">Diferente de consultorias tradicionais que te deixam no escuro, nosso método oferece visibilidade completa e controle sobre cada etapa do seu projeto.</p>
         </div>
 
 
-        <!-- <div class="timeline-img-container">
+        <div class="timeline-img-container">
             <img src="https://www.quantamagazine.org/wp-content/uploads/2027/04/CERN-3rd-community-vote_-Kuna_Erik_9-1-2048x1365.jpg" alt="Processo de entrega" class="timeline-img">
-        </div> -->
+        </div>
 
 
 
-        <!-- <div class="command-media">
+       <div class="command-media">
             <video class="media-video" autoplay loop muted playsinline>
                 <source src="https://svs.gsfc.nasa.gov/vis/a010000/a014600/a014619/1-Approaching_a_black_hole-HD.mp4" type="video/webm">
                 Seu navegador não suporta a exibição de vídeos.
             </video>
-        </div> -->
+        </div>
 
 
 
@@ -367,41 +393,170 @@
             <div class="timeline-item active">
                 <div class="timeline-icon">📋</div>
                 <div class="timeline-content">
-                    <h4>Diagnóstico Inicial</h4>
-                    <p>Mapeamento completo das dores e necessidades da sua empresa.</p>
+                    <h4 data-i18n="home.command.t1h">Diagnóstico Inicial</h4>
+                    <p data-i18n="home.command.t1p">Mapeamento completo das dores e necessidades da sua empresa.</p>
                 </div>
-                <div class="timeline-time">Semana 1</div>
+                <div class="timeline-time" data-i18n="home.command.t1time">Semana 1</div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-icon">📦</div>
                 <div class="timeline-content">
-                    <h4>Planejamento Estratégico</h4>
-                    <p>Definição de metas e criação do plano de ação personalizado.</p>
+                    <h4 data-i18n="home.command.t2h">Planejamento Estratégico</h4>
+                    <p data-i18n="home.command.t2p">Definição de metas e criação do plano de ação personalizado.</p>
                 </div>
-                <div class="timeline-time">Semana 1-3</div>
+                <div class="timeline-time" data-i18n="home.command.t2time">Semana 1-3</div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-icon">⚙️</div>
                 <div class="timeline-content">
-                    <h4>Execução e Desenvolvimento</h4>
-                    <p>Implementação das soluções com reportes de progresso semanais.</p>
+                    <h4 data-i18n="home.command.t3h">Execução e Desenvolvimento</h4>
+                    <p data-i18n="home.command.t3p">Implementação das soluções com reportes de progresso semanais.</p>
                 </div>
-                <div class="timeline-time">Semana 4-8</div>
+                <div class="timeline-time" data-i18n="home.command.t3time">Semana 4-8</div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-icon">🚀</div>
                 <div class="timeline-content">
-                    <h4>Entrega e Resultados</h4>
-                    <p>Apresentação final, transferência de conhecimento e mensuração de sucesso.</p>
+                    <h4 data-i18n="home.command.t4h">Entrega e Resultados</h4>
+                    <p data-i18n="home.command.t4p">Apresentação final, transferência de conhecimento e mensuração de sucesso.</p>
                 </div>
-                <div class="timeline-time">Semana 9-10</div>
+                <div class="timeline-time" data-i18n="home.command.t4time">Semana 9-10</div>
             </div>
         </div>
 
 
+    </section> -->
+
+    <!-- Seção de Equipe -->
+    <section class="team-section">
+        <div class="team-header">
+            <p class="team-eyebrow">Conheça quem faz acontecer</p>
+            <h2>Nossa equipe <em>de especialistas</em></h2>
+            <p class="team-subtitle">Estudantes apaixonados por ciência e tecnologia, unidos pelo propósito de gerar impacto real.</p>
+        </div>
+
+        <div class="team-carousel-wrapper">
+            <button class="team-nav team-nav-prev" aria-label="Anterior">&#8249;</button>
+
+            <div class="team-carousel" id="teamCarousel">
+
+                <!-- Membro 1 — substitua src, nome e cargo -->
+                <div class="team-card">
+                    <div class="team-card-img">
+                        <img src="assets/images/team/member1.jpg" alt="Foto do membro" onerror="this.style.display='none'">
+                        <div class="team-img-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4" stroke="#006ca8" stroke-width="1.5"/>
+                                <path d="M4 20C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 20" stroke="#006ca8" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-name">Nome<br><em class="team-surname">Sobrenome</em></h3>
+                        <hr class="team-divider">
+                        <p class="team-role">Cargo / Área de atuação</p>
+                    </div>
+                </div>
+
+                <!-- Membro 2 -->
+                <div class="team-card">
+                    <div class="team-card-img">
+                        <img src="assets/images/team/member2.jpg" alt="Foto do membro" onerror="this.style.display='none'">
+                        <div class="team-img-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4" stroke="#006ca8" stroke-width="1.5"/>
+                                <path d="M4 20C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 20" stroke="#006ca8" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-name">Nome<br><em class="team-surname">Sobrenome</em></h3>
+                        <hr class="team-divider">
+                        <p class="team-role">Cargo / Área de atuação</p>
+                    </div>
+                </div>
+
+                <!-- Membro 3 -->
+                <div class="team-card">
+                    <div class="team-card-img">
+                        <img src="assets/images/team/member3.jpg" alt="Foto do membro" onerror="this.style.display='none'">
+                        <div class="team-img-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4" stroke="#006ca8" stroke-width="1.5"/>
+                                <path d="M4 20C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 20" stroke="#006ca8" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-name">Nome<br><em class="team-surname">Sobrenome</em></h3>
+                        <hr class="team-divider">
+                        <p class="team-role">Cargo / Área de atuação</p>
+                    </div>
+                </div>
+
+                <!-- Membro 4 -->
+                <div class="team-card">
+                    <div class="team-card-img">
+                        <img src="assets/images/team/member4.jpg" alt="Foto do membro" onerror="this.style.display='none'">
+                        <div class="team-img-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4" stroke="#006ca8" stroke-width="1.5"/>
+                                <path d="M4 20C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 20" stroke="#006ca8" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-name">Nome<br><em class="team-surname">Sobrenome</em></h3>
+                        <hr class="team-divider">
+                        <p class="team-role">Cargo / Área de atuação</p>
+                    </div>
+                </div>
+
+                <!-- Membro 5 -->
+                <div class="team-card">
+                    <div class="team-card-img">
+                        <img src="assets/images/team/member5.jpg" alt="Foto do membro" onerror="this.style.display='none'">
+                        <div class="team-img-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4" stroke="#006ca8" stroke-width="1.5"/>
+                                <path d="M4 20C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 20" stroke="#006ca8" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-name">Nome<br><em class="team-surname">Sobrenome</em></h3>
+                        <hr class="team-divider">
+                        <p class="team-role">Cargo / Área de atuação</p>
+                    </div>
+                </div>
+
+                <!-- Membro 6 -->
+                <div class="team-card">
+                    <div class="team-card-img">
+                        <img src="assets/images/team/member6.jpg" alt="Foto do membro" onerror="this.style.display='none'">
+                        <div class="team-img-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="8" r="4" stroke="#006ca8" stroke-width="1.5"/>
+                                <path d="M4 20C4 16.5 7.5 14 12 14C16.5 14 20 16.5 20 20" stroke="#006ca8" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="team-card-info">
+                        <h3 class="team-name">Nome<br><em class="team-surname">Sobrenome</em></h3>
+                        <hr class="team-divider">
+                        <p class="team-role">Cargo / Área de atuação</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="team-nav team-nav-next" aria-label="Próximo">&#8250;</button>
+        </div>
+
+        <div class="team-dots" id="teamDots"></div>
     </section>
 
     <!-- CTA final (expansão) -->
@@ -409,12 +564,12 @@
         <div class="cta-banner-dots cta-banner-dots-left"></div>
         <div class="cta-banner-dots cta-banner-dots-right"></div>
         <div class="cta-banner-content">
-            <h2>Pronto para impulsionar sua empresa com ciência e tecnologia?</h2>
+            <h2 data-i18n="home.cta.title">Pronto para impulsionar sua empresa com ciência e tecnologia?</h2>
             <a href="#" class="btn-cta-banner">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 4H20V16H8L4 20V4Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                Comece agora
+                <span data-i18n="home.cta.button">Comece agora</span>
             </a>
         </div>
     </section>
@@ -424,23 +579,23 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="logo">
-                    <span class="logo-icon">///</span>
+                    <img src="assets/images/Logos/Logo.jpeg" alt="Momentum Jr. Logo" class="logo-icon">
                     <span class="logo-text">Momentum Jr.</span>
                 </div>
-                <p>Empresa Júnior de Ciência & Tecnologia que transforma conhecimento acadêmico em soluções reais para o mercado.</p>
+                <p data-i18n="footer.tagline">Empresa Júnior de Ciência & Tecnologia que transforma conhecimento acadêmico em soluções reais para o mercado.</p>
             </div>
 
             <div class="footer-links">
                 <div class="footer-col">
-                    <h5>Navegação</h5>
+                    <h5 data-i18n="footer.navHeader">Navegação</h5>
                     <ul>
-                        <li><a href="../../index.html">Início</a></li>
-                        <li><a href="../about/about.html">Quem Somos</a></li>
-                        <li><a href="service.html">Serviços</a></li>
+                        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="pages/about/about.html" data-i18n="footer.navAbout">Quem Somos</a></li>
+                        <li><a href="pages/service/service.html" data-i18n="nav.services">Serviços</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Contato</h5>
+                    <h5 data-i18n="footer.contactHeader">Contato</h5>
                     <ul>
                         <li><a href="mailto:contato@momentumjr.com">contato@momentumjr.com</a></li>
                         <li><a href="#">Instagram</a></li>
@@ -450,11 +605,12 @@
             </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-bottom" data-i18n="footer.copyright">
             &copy; 2026 Momentum Jr. Todos os direitos reservados.
         </div>
     </footer>
 
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/script.js"></script>
 
 </body>

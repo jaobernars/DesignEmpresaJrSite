@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços | Momentum Jr.</title>
+    <title data-i18n="service.pageTitle">Serviços | Momentum Jr.</title>
+    <script>
+        (function () {
+            if (localStorage.getItem("siteTheme") === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -11,64 +18,79 @@
 
     <nav class="navbar">
         <div class="logo">
-            <span class="logo-icon">///</span>
-            <span class="logo-text">Momentum Jr.</span>
+            <img src="../../assets/images/Logos/Logo.jpeg" alt="Momentum Jr. Logo" class="logo-icon">
+            <span class="logo-text">Many Fields</span>
         </div>
         <ul class="nav-links">
-            <li><a href="../../index.html">Início</a></li>
-            <li><a href="../about/about.html">Sobre</a></li>
-            <li><a href="service.html">Serviços</a></li>
-            <li><a href="#">Portfólio</a></li>
-            <li><a href="#">Contatos</a></li>
+            <li><a href="../../index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="../about/about.html" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="service.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="#" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="#" data-i18n="nav.contact">Contatos</a></li>
         </ul>
-        <a href="#" class="btn btn-primary nav-btn">Trabalhe Conosco</a>
+        <div class="navbar-actions">
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" data-i18n-aria-label="a11y.themeToggle">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 2V4M12 20V22M4 12H2M22 12H20M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66M6.34 6.34L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="lang-switch" role="group" aria-label="Selecionar idioma" data-i18n-aria-label="a11y.selectLanguage">
+                <button type="button" class="lang-option active" data-lang="pt">PT</button>
+                <button type="button" class="lang-option" data-lang="en">EN</button>
+            </div>
+            <a href="#" class="btn btn-primary nav-btn" data-i18n="nav.cta">Trabalhe Conosco</a>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="trust-badge">
+        <div class="trust-badge" data-i18n="service.hero.badge">
             Conheça nossos Serviços
         </div>
 
-        <h1>Os benefícios de ter ciência <br> a favor do seu negócio.</h1>
+        <h1 data-i18n="service.hero.title">Os benefícios de ter ciência <br> a favor do seu negócio.</h1>
 
-        <p class="subtitle">
+        <p class="subtitle" data-i18n="service.hero.subtitle">
             Da física à inteligência artificial, unimos rigor científico e tecnologia <br>
             para resolver problemas que vão muito além do senso comum.
         </p>
 
         <div class="hero-buttons">
-            <a href="#" class="btn btn-primary hero-btn">Fale com a equipe</a>
-            <a href="#servicos" class="btn btn-secondary hero-btn">Ver todos os serviços</a>
+            <a href="#" class="btn btn-primary hero-btn" data-i18n="service.hero.btn1">Fale com a equipe</a>
+            <a href="#servicos" class="btn btn-secondary hero-btn" data-i18n="service.hero.btn2">Ver todos os serviços</a>
         </div>
     </header>
 
     <!-- Comparativo: consultoria tradicional x Momentum Jr. -->
     <section class="comparison-section">
         <div class="section-header">
-            <h2>Por que escolher uma abordagem científica?</h2>
-            <p>Compare o modelo tradicional de consultoria com a forma como a Momentum Jr. resolve problemas reais.</p>
+            <h2 data-i18n="service.comparison.title">Por que escolher uma abordagem científica?</h2>
+            <p data-i18n="service.comparison.text">Compare o modelo tradicional de consultoria com a forma como a Momentum Jr. resolve problemas reais.</p>
         </div>
 
         <div class="comparison-grid">
             <div class="comparison-card old">
-                <h3>Consultoria tradicional</h3>
-                <div class="comparison-stat">30-90 dias</div>
+                <h3 data-i18n="home.costflow.tabTraditional">Consultoria tradicional</h3>
+                <div class="comparison-stat" data-i18n="service.comparison.oldStat">30-90 dias</div>
                 <ul class="comparison-list">
-                    <li><span class="comparison-icon bad">&times;</span> Diagnóstico genérico, sem profundidade técnica</li>
-                    <li><span class="comparison-icon bad">&times;</span> Equipes distantes da rotina da sua empresa</li>
-                    <li><span class="comparison-icon bad">&times;</span> Custos elevados para pequenas e médias empresas</li>
-                    <li><span class="comparison-icon bad">&times;</span> Entregas pouco mensuráveis</li>
+                    <li><span class="comparison-icon bad">&times;</span> <span data-i18n="service.comparison.old1">Diagnóstico genérico, sem profundidade técnica</span></li>
+                    <li><span class="comparison-icon bad">&times;</span> <span data-i18n="service.comparison.old2">Equipes distantes da rotina da sua empresa</span></li>
+                    <li><span class="comparison-icon bad">&times;</span> <span data-i18n="service.comparison.old3">Custos elevados para pequenas e médias empresas</span></li>
+                    <li><span class="comparison-icon bad">&times;</span> <span data-i18n="service.comparison.old4">Entregas pouco mensuráveis</span></li>
                 </ul>
             </div>
 
             <div class="comparison-card new">
                 <h3>Momentum Jr.</h3>
-                <div class="comparison-stat">3-10 semanas</div>
+                <div class="comparison-stat" data-i18n="service.comparison.newStat">3-10 semanas</div>
                 <ul class="comparison-list">
-                    <li><span class="comparison-icon good">&check;</span> Diagnóstico baseado em método científico</li>
-                    <li><span class="comparison-icon good">&check;</span> Contato direto com a equipe responsável pelo projeto</li>
-                    <li><span class="comparison-icon good">&check;</span> Custo acessível, sem fins lucrativos</li>
-                    <li><span class="comparison-icon good">&check;</span> Acompanhamento com métricas e relatórios de progresso</li>
+                    <li><span class="comparison-icon good">&check;</span> <span data-i18n="service.comparison.new1">Diagnóstico baseado em método científico</span></li>
+                    <li><span class="comparison-icon good">&check;</span> <span data-i18n="service.comparison.new2">Contato direto com a equipe responsável pelo projeto</span></li>
+                    <li><span class="comparison-icon good">&check;</span> <span data-i18n="service.comparison.new3">Custo acessível, sem fins lucrativos</span></li>
+                    <li><span class="comparison-icon good">&check;</span> <span data-i18n="service.comparison.new4">Acompanhamento com métricas e relatórios de progresso</span></li>
                 </ul>
             </div>
         </div>
@@ -77,8 +99,8 @@
     <!-- Nossos Serviços -->
     <section class="cards-section" id="servicos">
         <div class="section-header">
-            <h2>Nossos Serviços</h2>
-            <p>Cinco áreas de atuação para transformar ciência em resultado prático para o seu negócio.</p>
+            <h2 data-i18n="service.list.title">Nossos Serviços</h2>
+            <p data-i18n="service.list.text">Cinco áreas de atuação para transformar ciência em resultado prático para o seu negócio.</p>
         </div>
     </section>
 
@@ -86,21 +108,21 @@
     <section class="narrative-section">
         <div class="narrative-grid">
             <div class="narrative-text">
-                <span class="narrative-badge">⚙️ Engenharia & Física Aplicada</span>
-                <h2>Análise Física de Processos</h2>
-                <p>
+                <span class="narrative-badge" data-i18n="service.s1.badge">⚙️ Engenharia & Física Aplicada</span>
+                <h2 data-i18n="service.s1.title">Análise Física de Processos</h2>
+                <p data-i18n="service.s1.text">
                     Aplicamos princípios da física para entender, modelar e otimizar processos produtivos e
                     operacionais, identificando gargalos invisíveis a olho nu e propondo soluções baseadas em
                     dados reais de comportamento físico.
                 </p>
                 <ul class="narrative-list">
-                    <li><span class="list-check">&check;</span> Mapeamento de variáveis críticas do processo</li>
-                    <li><span class="list-check">&check;</span> Identificação de gargalos e perdas energéticas</li>
-                    <li><span class="list-check">&check;</span> Recomendações técnicas para otimização</li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s1.l1">Mapeamento de variáveis críticas do processo</span></li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s1.l2">Identificação de gargalos e perdas energéticas</span></li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s1.l3">Recomendações técnicas para otimização</span></li>
                 </ul>
             </div>
             <div class="narrative-media">
-                <img src="https://media.istockphoto.com/id/582256640/photo/oil-refinery-chemical-petrochemical-plant.jpg?s=612x612&w=0&k=20&c=BEdsHVe2vUfzRTb9KcsCS_tCH6_R_nKLKkOQCht8AKo=" alt="Análise Física de Processos" class="narrative-img">
+                <img src="https://media.istockphoto.com/id/582256640/photo/oil-refinery-chemical-petrochemical-plant.jpg?s=612x612&w=0&k=20&c=BEdsHVe2vUfzRTb9KcsCS_tCH6_R_nKLKkOQCht8AKo=" alt="Análise Física de Processos" data-i18n-alt="service.s1.title" class="narrative-img">
             </div>
         </div>
     </section>
@@ -109,21 +131,21 @@
     <section class="narrative-section">
         <div class="narrative-grid">
             <div class="narrative-media">
-                <img src="https://www.quantamagazine.org/wp-content/uploads/2027/04/CNRS-3rd_GANIL_Sous-Vide_Yannig-Van-De-Wouwer-1-2048x1365.jpg" alt="Análise e Caracterização de Materiais" class="narrative-img">
+                <img src="https://www.quantamagazine.org/wp-content/uploads/2027/04/CNRS-3rd_GANIL_Sous-Vide_Yannig-Van-De-Wouwer-1-2048x1365.jpg" alt="Análise e Caracterização de Materiais" data-i18n-alt="service.s2.title" class="narrative-img">
             </div>
             <div class="narrative-text">
-                <span class="narrative-badge">🔬 Ciência dos Materiais</span>
-                <h2>Análise e Caracterização de Materiais</h2>
-                <p>
+                <span class="narrative-badge" data-i18n="service.s2.badge">🔬 Ciência dos Materiais</span>
+                <h2 data-i18n="service.s2.title">Análise e Caracterização de Materiais</h2>
+                <p data-i18n="service.s2.text">
                     Investigamos a composição, estrutura e propriedades de materiais utilizados em seus produtos
                     ou processos, ajudando a validar qualidade, identificar falhas e propor alternativas mais
                     eficientes e sustentáveis.
                 </p>
-                
+
                 <ul class="narrative-list">
-                    <li><span class="list-check">&check;</span> Ensaios e análises laboratoriais orientadas</li>
-                    <li><span class="list-check">&check;</span> Diagnóstico de falhas e não conformidades</li>
-                    <li><span class="list-check">&check;</span> Sugestão de materiais alternativos</li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s2.l1">Ensaios e análises laboratoriais orientadas</span></li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s2.l2">Diagnóstico de falhas e não conformidades</span></li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s2.l3">Sugestão de materiais alternativos</span></li>
                 </ul>
             </div>
         </div>
@@ -133,27 +155,27 @@
     <section class="narrative-section">
         <div class="narrative-grid">
             <div class="narrative-text">
-                <span class="narrative-badge">📊 Dados & Automação</span>
-                <h2>Análise de Dados, Estatística Aplicada e Automação de Processos</h2>
-                <p>
+                <span class="narrative-badge" data-i18n="service.s3.badge">📊 Dados & Automação</span>
+                <h2 data-i18n="service.s3.title">Análise de Dados e Automação de Processos</h2>
+                <p data-i18n="service.s3.text">
                     Transformamos dados brutos em decisões estratégicas. Utilizamos estatística aplicada para
                     validar hipóteses e automatizamos rotinas manuais, liberando tempo da sua equipe para o que
                     realmente importa.
                 </p>
                 <ul class="narrative-list">
-                    <li><span class="list-check">&check;</span> Tratamento e modelagem estatística de dados</li>
-                    <li><span class="list-check">&check;</span> Dashboards e relatórios automatizados</li>
-                    <li><span class="list-check">&check;</span> Automação de processos repetitivos</li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s3.l1">Tratamento e modelagem estatística de dados</span></li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s3.l2">Dashboards e relatórios automatizados</span></li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s3.l3">Automação de processos repetitivos</span></li>
                 </ul>
             </div>
             <div class="narrative-media">
-                <img src="https://www.sankhya.com.br/wp-content/uploads/2025/01/Automacao-de-processos-1-1.png" alt="Análise de Dados, Estatística Aplicada e Automação de Processos" class="narrative-img">
+                <img src="https://www.sankhya.com.br/wp-content/uploads/2025/01/Automacao-de-processos-1-1.png" alt="Análise de Dados, Estatística Aplicada e Automação de Processos" data-i18n-alt="service.s3.title" class="narrative-img">
             </div>
         </div>
     </section>
 
     <!-- 4. Inteligência Artificial e Machine Learning -->
-    <section class="narrative-section">
+    <!-- <section class="narrative-section">
         <div class="narrative-grid">
             <div class="narrative-media">
                 <img src="../../assets/img/servico-ia-machine-learning.jpg" alt="Inteligência Artificial e Machine Learning" class="narrative-img">
@@ -172,27 +194,27 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- 5. Simulação e Modelagem Computacional -->
     <section class="narrative-section">
         <div class="narrative-grid">
             <div class="narrative-text">
-                <span class="narrative-badge">🧪 Simulação Computacional</span>
-                <h2>Simulação e Modelagem Computacional</h2>
-                <p>
+                <span class="narrative-badge" data-i18n="service.s5.badge">🧪 Simulação Computacional</span>
+                <h2 data-i18n="service.s5.title">Simulação e Modelagem Computacional</h2>
+                <p data-i18n="service.s5.text">
                     Construímos modelos computacionais que simulam cenários reais antes que eles aconteçam,
                     permitindo testar hipóteses, reduzir custos com experimentação física e acelerar a tomada
                     de decisão.
                 </p>
                 <ul class="narrative-list">
-                    <li><span class="list-check">&check;</span> Simulações numéricas e modelos físico-matemáticos</li>
-                    <li><span class="list-check">&check;</span> Testes de cenários e análise de sensibilidade</li>
-                    <li><span class="list-check">&check;</span> Validação computacional antes da implementação</li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s5.l1">Simulações numéricas e modelos físico-matemáticos</span></li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s5.l2">Testes de cenários e análise de sensibilidade</span></li>
+                    <li><span class="list-check">&check;</span> <span data-i18n="service.s5.l3">Validação computacional antes da implementação</span></li>
                 </ul>
             </div>
             <div class="narrative-media">
-                <img src="https://storage.googleapis.com/site.esss.co/cab58820-post16-thumb-blog-principais-desafios-gestao-projetos.png" alt="Simulação e Modelagem Computacional" class="narrative-img">
+                <img src="https://storage.googleapis.com/site.esss.co/cab58820-post16-thumb-blog-principais-desafios-gestao-projetos.png" alt="Simulação e Modelagem Computacional" data-i18n-alt="service.s5.title" class="narrative-img">
             </div>
         </div>
     </section>
@@ -200,41 +222,41 @@
     <!-- FAQ -->
     <section class="faq-section" id="faq">
         <div class="section-header">
-            <h2>Perguntas frequentes</h2>
+            <h2 data-i18n="faq.title">Perguntas frequentes</h2>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Preciso contratar todos os serviços juntos?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="service.faq.q1">Preciso contratar todos os serviços juntos?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Não. Cada serviço pode ser contratado de forma independente, de acordo com a necessidade específica do seu negócio.</p>
+                <p data-i18n="service.faq.a1">Não. Cada serviço pode ser contratado de forma independente, de acordo com a necessidade específica do seu negócio.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Como sei qual serviço é o ideal para minha empresa?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="service.faq.q2">Como sei qual serviço é o ideal para minha empresa?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Fazemos um diagnóstico inicial para entender seu problema e indicar qual abordagem trará mais resultado.</p>
+                <p data-i18n="service.faq.a2">Fazemos um diagnóstico inicial para entender seu problema e indicar qual abordagem trará mais resultado.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Quanto tempo dura cada projeto?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="service.faq.q3">Quanto tempo dura cada projeto?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Depende da complexidade, mas a maioria dos projetos é entregue entre 3 e 10 semanas.</p>
+                <p data-i18n="service.faq.a3">Depende da complexidade, mas a maioria dos projetos é entregue entre 3 e 10 semanas.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Os serviços podem ser combinados?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="service.faq.q4">Os serviços podem ser combinados?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Sim. É comum combinarmos, por exemplo, automação de processos com inteligência artificial para potencializar os resultados.</p>
+                <p data-i18n="service.faq.a4">Sim. É comum combinarmos, por exemplo, automação de processos com inteligência artificial para potencializar os resultados.</p>
             </div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Que tipo de empresa pode contratar esses serviços?<span class="faq-icon">+</span></div>
+            <div class="faq-question"><span data-i18n="service.faq.q5">Que tipo de empresa pode contratar esses serviços?</span><span class="faq-icon">+</span></div>
             <div class="faq-answer">
-                <p>Empresas de qualquer porte e segmento que enfrentem desafios técnicos, operacionais ou de dados.</p>
+                <p data-i18n="service.faq.a5">Empresas de qualquer porte e segmento que enfrentem desafios técnicos, operacionais ou de dados.</p>
             </div>
         </div>
     </section>
@@ -243,9 +265,9 @@
     <section class="process-container">
         <div class="process-banner">
             <div class="process-content no-timeline">
-                <h2>Pronto para aplicar ciência ao seu negócio?</h2>
-                <p>Conte pra gente qual é o seu desafio e descubra qual dos nossos serviços pode acelerar seus resultados.</p>
-                <a href="#" class="btn btn-primary">Fale com a gente</a>
+                <h2 data-i18n="service.cta.title">Pronto para aplicar ciência ao seu negócio?</h2>
+                <p data-i18n="service.cta.text">Conte pra gente qual é o seu desafio e descubra qual dos nossos serviços pode acelerar seus resultados.</p>
+                <a href="#" class="btn btn-primary" data-i18n="cta.talkToUs">Fale com a gente</a>
             </div>
         </div>
     </section>
@@ -255,23 +277,23 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="logo">
-                    <span class="logo-icon">///</span>
+                    <img src="../../assets/images/logo.png" alt="Momentum Jr. Logo" class="logo-icon">
                     <span class="logo-text">Momentum Jr.</span>
                 </div>
-                <p>Empresa Júnior de Ciência & Tecnologia que transforma conhecimento acadêmico em soluções reais para o mercado.</p>
+                <p data-i18n="footer.tagline">Empresa Júnior de Ciência & Tecnologia que transforma conhecimento acadêmico em soluções reais para o mercado.</p>
             </div>
 
             <div class="footer-links">
                 <div class="footer-col">
-                    <h5>Navegação</h5>
+                    <h5 data-i18n="footer.navHeader">Navegação</h5>
                     <ul>
-                        <li><a href="../../index.html">Início</a></li>
-                        <li><a href="../about/about.html">Quem Somos</a></li>
-                        <li><a href="service.html">Serviços</a></li>
+                        <li><a href="../../index.html" data-i18n="nav.home">Início</a></li>
+                        <li><a href="../about/about.html" data-i18n="footer.navAbout">Quem Somos</a></li>
+                        <li><a href="service.html" data-i18n="nav.services">Serviços</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Contato</h5>
+                    <h5 data-i18n="footer.contactHeader">Contato</h5>
                     <ul>
                         <li><a href="mailto:contato@momentumjr.com">contato@momentumjr.com</a></li>
                         <li><a href="#">Instagram</a></li>
@@ -281,11 +303,12 @@
             </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-bottom" data-i18n="footer.copyright">
             &copy; 2026 Momentum Jr. Todos os direitos reservados.
         </div>
     </footer>
 
+    <script src="../../assets/js/i18n.js"></script>
     <script src="../../assets/js/script.js"></script>
 
 </body>
