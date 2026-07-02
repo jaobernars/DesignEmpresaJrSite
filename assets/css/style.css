@@ -527,7 +527,7 @@ body {
 }
 
 .link-green {
-    color: #E19016;
+    color: #00a2ff;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -1655,7 +1655,7 @@ body {
 .cta-banner {
     position: relative;
     max-width: 1280px;
-    margin: 60px auto 0;
+    margin: 60px auto 100px;
     padding: 100px 5%;
     border-radius: 24px;
     overflow: hidden;
@@ -1705,11 +1705,11 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-image: linear-gradient(to bottom, #1fb15a, #0d8a3f);
+    background-image: linear-gradient(to bottom, #c9a84c, #bb9837);
     color: #ffffff;
-    border: 1px solid #0a7a37;
+    border: 1px solid #c9a84c;
     padding: 12px 24px;
-    border-radius: 999px;
+    border-radius: 10px;
     font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none;
@@ -1975,11 +1975,16 @@ body {
     position: relative;
 }
 
+.team-carousel-clip {
+    flex: 1;
+    overflow: hidden;
+    min-width: 0;
+}
+
 .team-carousel {
     display: flex;
     gap: 20px;
-    overflow: hidden;
-    flex: 1;
+    will-change: transform;
 }
 
 /* Navigation arrows */
@@ -2136,6 +2141,160 @@ body {
 
 [data-theme="dark"] .team-dot {
     background: #1e3a5f;
+}
+
+/* ================================================
+   INFINITE LOGO SLIDER
+   ================================================ */
+
+.clients-slider-section {
+    padding: 40px 0;
+    background: #ffffff;
+    border-top: 1px solid #e8edf2;
+    border-bottom: 1px solid #e8edf2;
+    overflow: hidden;
+}
+
+.clients-slider-label {
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8899aa;
+    margin-bottom: 28px;
+}
+
+/* Wrapper com fade nas bordas */
+.clients-slider-track-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.clients-fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.clients-fade-left {
+    left: 0;
+    background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+}
+
+.clients-fade-right {
+    right: 0;
+    background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+}
+
+/* Track com animação infinita */
+.clients-slider-track {
+    width: 100%;
+    overflow: hidden;
+}
+
+.clients-list {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+    animation: clients-scroll 28s linear infinite;
+}
+
+.clients-list:hover {
+    animation-play-state: paused;
+}
+
+@keyframes clients-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Cada item */
+.clients-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    border-right: 1px solid #e8edf2;
+    height: 56px;
+    flex-shrink: 0;
+}
+
+/* Images real */
+.clients-item img {
+    height: 32px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    opacity: 0.6;
+    filter: grayscale(100%);
+    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+.clients-item:hover img {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.08);
+}
+
+/* Placeholder de texto — substitua por <img> quando tiver as logos reais */
+.client-logo-placeholder {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #a0b4c8;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.clients-item:hover .client-logo-placeholder {
+    color: #006ca8;
+}
+
+/* Quando usar imagem real: .clients-item img { height: 28px; width: auto; opacity: 0.5; transition: opacity 0.3s; filter: grayscale(1); }
+   .clients-item:hover img { opacity: 1; filter: grayscale(0); } */
+
+/* Dark mode */
+[data-theme="dark"] .clients-slider-section {
+    background: #0a1628;
+    border-color: #1e3a5f;
+}
+
+[data-theme="dark"] .clients-fade-left {
+    background: linear-gradient(to right, #0a1628 0%, transparent 100%);
+}
+
+[data-theme="dark"] .clients-fade-right {
+    background: linear-gradient(to left, #0a1628 0%, transparent 100%);
+}
+
+[data-theme="dark"] .clients-item {
+    border-color: #1e3a5f;
+}
+
+[data-theme="dark"] .client-logo-placeholder {
+    color: #3a5a7a;
+}
+
+[data-theme="dark"] .clients-item:hover .client-logo-placeholder {
+    color: #42a5f5;
+}
+
+[data-theme="dark"] .clients-item img {
+    opacity: 0.4;
+    filter: grayscale(100%) brightness(1.2);
+}
+
+[data-theme="dark"] .clients-item:hover img {
+    opacity: 0.9;
+    filter: grayscale(0%) brightness(1);
 }
 
 
